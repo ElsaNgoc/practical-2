@@ -1,0 +1,40 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: summary_mnist
+      id: summary_mnist
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: summary_mnist
+        setup-command: pip install opencv_python_headless matplotlib  torch torchvision
+        command: python -m unittest week2_test.TestMNIST.test_summary_mnist
+        timeout: 10
+        max-score: 1
+    - name: build_mnist_model
+      id: build_mnist_model
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: build_mnist_model
+        setup-command: pip install opencv_python_headless matplotlib torch torchvision
+        command: python -m unittest week2_test.TestMNIST.test_build_mnist_model
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        SUMMARY_MNIST_RESULTS: "${{steps.summary_mnist.outputs.result}}"
+        BUILD_MNIST_MODEL_RESULTS: "${{steps.build_mnist_model.outputs.result}}"
+      with:
+        runners: summary_mnist,build_mnist_model
