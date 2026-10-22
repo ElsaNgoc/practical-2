@@ -1,18 +1,18 @@
-# 🧠 Practical 2 — Neural Networks on MNIST
+# 🧠 Practical 2: Neural Networks on MNIST
 
 A university practical exploring the **MNIST handwritten digits dataset** and building a **first neural network classifier** with PyTorch.
 
 ## 📚 What I Did
 
-- **Explored the data** — counted how many samples of each digit appear in the training and test sets, to check whether the classes are balanced
-- **Built a neural network** — a simple feed-forward model with one hidden layer, ReLU activation and optional dropout, mapping 28×28 images (784 inputs) to 10 digit classes
-- **Tested my work** — verified each function with doctests and the provided automated tests
+* **Explored the data**: counted how many samples of each digit appear in the training and test sets, to check whether the classes are balanced
+* **Built a neural network**: a simple feed forward model with one hidden layer, ReLU activation and optional dropout, mapping 28×28 images (784 inputs) to 10 digit classes
+* **Tested my work**: verified each function with doctests and the provided automated tests
 
 ## 🎯 Key Takeaways
 
-- Why checking class balance matters before training a model
-- How hidden layer size and dropout affect a model's ability to generalise
-- Writing small, testable functions with clear expected outputs
+* Why checking class balance matters before training a model
+* How hidden layer size and dropout affect a model's ability to generalise
+* Writing small, testable functions with clear expected outputs
 
 ## 🛠️ Tech Stack
 
@@ -31,4 +31,4 @@ The full instructions are in [`Practical Week 02.ipynb`](practical2-template-mai
 
 ## 👩‍💻 Author
 
-**Elsa Ngoc Dang** — Bachelor of IT (Business Analysis), Macquarie University · [LinkedIn](https://www.linkedin.com/in/ha-bao-ngoc-dang/)
+**Elsa Ngoc Dang**: Bachelor of IT (Business Analysis), Macquarie University · [LinkedIn](https://www.linkedin.com/in/ha-bao-ngoc-dang/)
